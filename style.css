@@ -1,5 +1,5 @@
 :root {
-    --cor-principal: rgb(217, 55, 75);
+    --cor-principal: #EF6B9A;
     --cor2-secundaria: whitesmoke;
     --cor-fundo: rgb(255, 199, 207);
 }
@@ -13,16 +13,34 @@ body {
     font-size: 30px;
     color: var(--cor2-secundaria);
     text-shadow: var(--cor-principal) 1px 1px;
+    background-image: url(hellokittyfundo.png);
+    background-size: 10rem;
+    background-repeat: repeat;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+hr {
+	border: none;
+	border-bottom: .3rem dashed var(--cor-principal);
 }
 
 .opcoes {
     margin-bottom: 2rem;
     padding: 1rem;
     border-radius: 1rem;
+    border: solid .3rem var(--cor-principal);
     background-image: url("imagem1");
     background-repeat: no-repeat;
     background-size: 600px;
     background-position: center;
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* Uma coluna para o label e outra para o input */
+    grid-gap: 5px;
 }
 
 .Nome {
@@ -34,6 +52,25 @@ body {
     border-radius: 1rem;
     padding: .5rem 2rem;
 }
+
+.input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: var(--cor2-secundaria);
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+  
+  .input:hover,
+  .input:focus {
+    border: 2px solid var(--cor-principal);
+    box-shadow: 0px 0px 0px 3px var(--cor-fundo);
+    background-color: var(--cor2-secundaria);
+  }
 
 .glow-on-hover {
     width: 220px;
@@ -65,10 +102,6 @@ body {
     opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
-}
-
-.glow-on-hover:active {
-    color: #000
 }
 
 .glow-on-hover:active:after {
