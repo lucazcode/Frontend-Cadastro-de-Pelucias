@@ -65,7 +65,26 @@ document.body.onload = function() {
         // Converte os objetos simples de volta para instâncias da classe Pelucia
         vetor = vetor.map(item => new Pelucia(item.nome, item.marca, item.versao, item.caixa, item.tecido, item.especie, item.tamanho));
     }
+    atualizarPreco();
 }
+
+const precoDisplay = document.getElementById('precoDisplay');
+
+// Função para atualizar o preço
+function atualizarPreco() {
+    const aut = new Pelucia(c1.value, c2.value, c3.value, c4.value, c5.value, c6.value, c7.value);
+    const valor = aut.preco();
+    precoDisplay.value = `R$ ${valor.toFixed(2)}`;
+}
+
+// Adicionando eventos de mudança nos campos de entrada
+c1.addEventListener('change', atualizarPreco);
+c2.addEventListener('change', atualizarPreco);
+c3.addEventListener('change', atualizarPreco);
+c4.addEventListener('change', atualizarPreco);
+c5.addEventListener('change', atualizarPreco);
+c6.addEventListener('change', atualizarPreco);
+c7.addEventListener('change', atualizarPreco);
 
 f1.onsubmit = function(e) {
     e.preventDefault();  // cancela submit do formulário
@@ -123,3 +142,5 @@ bLimpar.onclick = function() {
     // Resetar a cor de fundo da div quando limpar
     dListar.style.backgroundColor = ''; // Volta ao fundo original sem cor
 };
+
+// =)!

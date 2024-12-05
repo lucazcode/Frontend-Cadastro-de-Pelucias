@@ -13,18 +13,14 @@
     <div>
       <label for="c1">Nome da pelúcia:</label>
       <input  class="input" type="text" name="cNome" id="c1"
-             maxlength="20" required
+             maxlength="20" required autocomplete="off"
              placeholder="Nome da sua pelúcia!" title="Digite o nome"
              pattern="^[a-zA-Z]{1,20}$"
       />
     </div>
     <div>
-      <label for="c2">Marca:</label>
-      <select class="input" name="cMarca" id="c2">
-        <option value="Kawaii Pom Pom">Kawaii Pom Pom</option>
-        <option value="Sanrio Brasil" selected>Sanrio Brasil</option>
-        <option value="Sunny Cinnamon">Sunny Cinnamon</option>
-      </select>
+      Preço:
+      <input class="input" type="text" id="precoDisplay" disabled/>
     </div>
     <div>
       <label for="c3">Versão:</label>
@@ -36,8 +32,8 @@
     <div>
       <label for="c4">Caixa de voz:</label>
       <select class="input" name="cVoz" id="c4">
-        <option value="Inclusa" selected>Inclusa</option>
-        <option value="Não inclusa">Não inclusa</option>
+        <option value="Inclusa">Inclusa</option>
+        <option value="Não inclusa" selected>Não inclusa</option>
       </select>
     </div>
     <div>
@@ -63,10 +59,18 @@
     <div>
       <label for="c7">Tamanho:</label>
       <select class="input" name="cTamanho" id="c7">
-        <option value="P">P</option>
-        <option value="M" selected>M</option>
+        <option value="P" selected>P</option>
+        <option value="M">M</option>
         <option value="G">G</option>
         <option value="XG">XG</option>
+      </select>
+    </div>
+    <div>
+      <label for="c2">Marca:</label>
+      <select class="input" name="cMarca" id="c2">
+        <option value="Kawaii Pom Pom">Kawaii Pom Pom</option>
+        <option value="Sanrio Brasil" selected>Sanrio Brasil</option>
+        <option value="Sunny Cinnamon">Sunny Cinnamon</option>
       </select>
     </div>
   </div>

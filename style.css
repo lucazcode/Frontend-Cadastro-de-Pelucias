@@ -8,19 +8,17 @@ body {
     width: 600px;
     margin: 0 auto;
     background-color: var(--cor-fundo);
-    padding: 5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     font-family: Constantia, serif;
     font-size: 30px;
     color: var(--cor2-secundaria);
     text-shadow: var(--cor-principal) 1px 1px;
-    background-image: url(hellokittyfundo.png);
-    background-size: 10rem;
-    background-repeat: repeat;
 }
 
 h1 {
-    margin: 0 0 1rem;
-    font-size: 3.5rem;
+    margin: 0 0 .5rem;
+    font-size: 2.5rem;
     text-align: center;
 }
 
@@ -64,11 +62,11 @@ hr {
     border-radius: 10px;
     transition: all 0.5s;
   }
-  
+
   .input:hover,
   .input:focus {
     border: 2px solid var(--cor-principal);
-    box-shadow: 0px 0px 0px 3px var(--cor-fundo);
+    box-shadow: 0 0 0 3px var(--cor-fundo);
     background-color: var(--cor2-secundaria);
   }
 
@@ -129,3 +127,5 @@ hr {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+/* =)! */
