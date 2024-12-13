@@ -63,6 +63,15 @@ hr {
     transition: all 0.5s;
   }
 
+.botao-excluir {
+    margin-top: 1rem;
+    width: 4rem;
+    background-color: var(--cor2-secundaria);
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
   .input:hover,
   .input:focus {
     border: 2px solid var(--cor-principal);

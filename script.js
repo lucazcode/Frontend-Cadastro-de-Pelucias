@@ -103,8 +103,8 @@ bListar.onclick = function() {
         dListar.removeChild(dListar.childNodes[0]);
     }
 
-    // Inserir dados de pelúcias na DIV
-    for (let a of vetor) {
+    // Inserir dados de pelúcias na DIV com botão de exclusão
+    vetor.forEach((a, index) => {
         const valor = a.preco(); // Chama o método para obter o preço
         const descr = `Nome da pelúcia: ${a.nome}
 Marca: ${a.marca}
@@ -117,15 +117,31 @@ Preço Final: R$ ${valor.toFixed(2)}
 `; // Adiciona o preço à descrição
         const novoParagrafo = document.createElement('pre');
         novoParagrafo.textContent = descr;
+
+        // Botão para excluir individualmente
+        const botaoExcluir = document.createElement('button');
+        botaoExcluir.textContent = 'Excluir';
+        botaoExcluir.classList.add('botao-excluir', 'input');
+        botaoExcluir.onclick = function() {
+            // Remove a pelúcia do vetor
+            vetor.splice(index, 1);
+            // Atualiza o localStorage
+            localStorage.setItem("vetAut", JSON.stringify(vetor));
+            // Recarregar a lista
+            bListar.onclick();
+        };
+
+        // Adicionar descrição e botão de exclusão na div
+        novoParagrafo.appendChild(botaoExcluir);
         dListar.appendChild(novoParagrafo);
-    }
+    });
 
     // Verificar se a div tem conteúdo após adicionar os itens
     if (dListar.hasChildNodes()) {
         // Mudar cor de fundo se houver conteúdo
         dListar.style.backgroundColor = 'var(--cor-principal)';
     } else {
-        // Se não houver conteúdo, removemos a cor de fundo
+        // Se não houver conteúdo, remove a cor de fundo
         dListar.style.backgroundColor = '';
     }
 };
